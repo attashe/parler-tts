@@ -58,11 +58,11 @@ from transformers.utils import (
 from transformers.utils.import_utils import is_flash_attn_2_available, is_flash_attn_greater_or_equal_2_10
 
 from .configuration_parler_tts import ParlerTTSConfig, ParlerTTSDecoderConfig
-from .dac_wrapper import DACConfig, DACModel
+from .daca_wrapper import DACAConfig, DACAModel
 
 
-AutoConfig.register("dac", DACConfig)
-AutoModel.register(DACConfig, DACModel)
+AutoConfig.register("daca", DACAConfig)
+AutoModel.register(DACAConfig, DACAModel)
 
 if TYPE_CHECKING:
     from transformers.generation.streamers import BaseStreamer

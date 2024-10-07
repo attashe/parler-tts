@@ -2,8 +2,8 @@
 from transformers import PretrainedConfig
 
 
-class DACConfig(PretrainedConfig):
-    model_type = "dac"
+class DACAConfig(PretrainedConfig):
+    model_type = "daca"
 
     def __init__(
         self,

@@ -4,7 +4,7 @@ __version__ = "0.2"
 from transformers import AutoConfig, AutoModel
 
 from .configuration_parler_tts import ParlerTTSConfig, ParlerTTSDecoderConfig
-from .dac_wrapper import DACConfig, DACModel
+from .daca_wrapper import DACAConfig, DACAModel
 from .modeling_parler_tts import (
     ParlerTTSForCausalLM,
     ParlerTTSForConditionalGeneration,
@@ -14,5 +14,5 @@ from .modeling_parler_tts import (
 
 from .streamer import ParlerTTSStreamer
 
-AutoConfig.register("dac", DACConfig)
-AutoModel.register(DACConfig, DACModel)
+AutoConfig.register("daca", DACAConfig)
+AutoModel.register(DACAConfig, DACAModel)

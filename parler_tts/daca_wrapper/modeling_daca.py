@@ -1,21 +1,21 @@
 import torch
-from dac.model import DAC
+from daca.model import DACA
 from transformers import PreTrainedModel
 from transformers.models.encodec.modeling_encodec import EncodecDecoderOutput, EncodecEncoderOutput
 
-from .configuration_dac import DACConfig
+from .configuration_daca import DACAConfig
 
 
 # model doesn't support batching yet
 
 
-class DACModel(PreTrainedModel):
-    config_class = DACConfig
+class DACAModel(PreTrainedModel):
+    config_class = DACAConfig
 
     def __init__(self, config):
         super().__init__(config)
 
-        self.model = DAC(
+        self.model = DACA(
             n_codebooks=config.num_codebooks,
             latent_dim=config.latent_dim,
             codebook_size=config.codebook_size,
@@ -133,4 +133,4 @@ class DACModel(PreTrainedModel):
         return EncodecDecoderOutput(audio_values)
 
     def forward(self, tensor):
-        raise ValueError("`DACModel.forward` not implemented yet")
+        raise ValueError("`DACAModel.forward` not implemented yet")
